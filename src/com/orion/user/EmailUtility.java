@@ -19,25 +19,24 @@ public class EmailUtility {
 			final String password, String recipientEmail, String subject, String message)
 			throws AddressException, MessagingException, UnsupportedEncodingException {
 
-		// sets SMTP server properties
 		Properties properties = new Properties();
 		properties.put("mail.smtp.host", host);
 		properties.put("mail.smtp.port", port);
 		properties.put("mail.smtp.auth", "true");
 		properties.put("mail.smtp.starttls.enable", "true");
-
-		// creates a new session with an authenticator
+		
+		System.out.println("Email utility");
 		Authenticator auth = new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(senderEmail, password);
 			}
 		};
-
+		System.out.println("Email utility1");
 		Session session = Session.getInstance(properties, auth);
-
+		System.out.println("Email utility2");
 		// creates a new e-mail message
 		Message msg = new MimeMessage(session);
-
+		System.out.println("Email utility3");
 		msg.setFrom(new InternetAddress(senderEmail, senderName));
 		InternetAddress[] toAddresses = { new InternetAddress(recipientEmail) };
 		msg.setRecipients(Message.RecipientType.TO, toAddresses);

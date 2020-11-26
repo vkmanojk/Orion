@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -26,7 +24,7 @@ public class UserDbUtil {
 			myStmt = myConn.createStatement();
 			String sql = "INSERT INTO user (title, name, phone, email, password, type, isPhone, course) " + "VALUES ('"
 					+ user.getTitle() + "', '" + user.getName() + "', '" + user.getPhone() + "'" + ", '"
-					+ user.getEmail() + "', '" + user.getPassword() + "', '" + user.getType() + "'" + ", "
+					+ user.getEmail() + "', md5('" + user.getPassword() + "'), '" + user.getType() + "'" + ", "
 					+ user.isPhone() + ", '" + user.getCourse() + "')";
 			myStmt.executeUpdate(sql);
 			System.out.println("Registered");
@@ -46,7 +44,7 @@ public class UserDbUtil {
 		try {
 			myConn = dataSource.getConnection();
 			myStmt = myConn.createStatement();
-			String sql = "SELECT * FROM user WHERE email = '" + email + "' AND password= '" + password + "'";
+			String sql = "SELECT * FROM user WHERE email = '" + email + "' AND password= md5('" + password + "')";
 			myRs = myStmt.executeQuery(sql);
 
 			while (myRs.next()) {
@@ -77,11 +75,11 @@ public class UserDbUtil {
 		try {
 			myConn = dataSource.getConnection();
 			myStmt = myConn.createStatement();
-			String sql = "SELECT * FROM user WHERE email = '" + email + "' AND password= '" + old + "'";
+			String sql = "SELECT * FROM user WHERE email = '" + email + "' AND password= md5('" + old + "')";
 			myRs = myStmt.executeQuery(sql);
 
 			if (myRs.next()) {
-				sql = "UPDATE user SET password= '" + confirm + "' WHERE email = '" + email + "'";
+				sql = "UPDATE user SET password= md5('" + confirm + "') WHERE email = '" + email + "'";
 				myStmt.executeUpdate(sql);
 				close(myConn, myStmt, myRs);
 				return true;
@@ -114,7 +112,7 @@ public class UserDbUtil {
 				return false;
 
 			} else {
-				sql = "UPDATE user SET password= '" + password + "' WHERE email = '" + email + "'";
+				sql = "UPDATE user SET password= md5('" + password + "') WHERE email = '" + email + "'";
 				myStmt.executeUpdate(sql);
 				close(myConn, myStmt, myRs);
 				return true;
@@ -154,44 +152,6 @@ public class UserDbUtil {
 		} finally {
 			close(myConn, myStmt, myRs);
 		}
-	}
-
-	public List<User> getUser() {
-		List<User> users = new ArrayList<>();
-		Connection myConn = null;
-		Statement myStmt = null;
-		ResultSet myRs = null;
-
-		try {
-			myConn = dataSource.getConnection();
-			myStmt = myConn.createStatement();
-			String sql = "SELECT * FROM user";
-			myRs = myStmt.executeQuery(sql);
-			int id;
-			String title, name, phone, email, password, course;
-			int type;
-			boolean isPhone;
-			while (myRs.next()) {
-				id = myRs.getInt("id");
-				title = myRs.getString("title");
-				name = myRs.getString("name");
-				phone = myRs.getString("phone");
-				email = myRs.getString("email");
-				password = myRs.getString("password");
-				type = myRs.getInt("type");
-				course = myRs.getString("course");
-				isPhone = myRs.getBoolean("isPhone");
-
-				User temp = new User(id, title, name, phone, email, password, course, type, isPhone);
-				users.add(temp);
-
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close(myConn, myStmt, myRs);
-		}
-		return users;
 	}
 
 	private void close(Connection myConn, Statement myStmt, ResultSet myRs) {

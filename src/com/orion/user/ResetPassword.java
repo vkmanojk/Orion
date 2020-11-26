@@ -59,18 +59,22 @@ public class ResetPassword extends HttpServlet {
 		String newPassword = resetPassword(recipient);
 		String content = "Hi, this is your new password: " + newPassword;
 		content += "\nNote: for security reasons, " + "kindly ensure that you change your password after logging in.";
-
+		System.out.println(newPassword);
 		String message = "";
 		if (newPassword == null) {
 			request.getRequestDispatcher("user/resetpass.jsp").forward(request, response);
 		} else {
 			try {
+				System.out.println("Email not send to reset");
 				EmailUtility.sendEmail(host, port, email, name, pass, recipient, subject, content);
+				System.out.println("Email sent to reset");
 				message = "Your password has been reset. Please check your e-mail.";
 			} catch (Exception ex) {
+				System.out.println("Unable to reset");
 				ex.printStackTrace();
 				message = "There was an error: " + ex.getMessage();
 			} finally {
+				System.out.println(message);
 				request.setAttribute("resetmsg", message);
 				request.getRequestDispatcher("/login.jsp").forward(request, response);
 			}
