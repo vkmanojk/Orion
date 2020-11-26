@@ -1,5 +1,11 @@
-function myFunction() {
-    // Declare variables
+function showScholarship(n,cur) {
+	for(i=1; i<=n; i++) {
+		document.getElementById("Scholarship-"+i).style.display = "none";
+	};
+	document.getElementById("Scholarship-"+cur).style.display = "block";
+}
+
+function searchScholarship() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('myInput');
     filter = input.value.toUpperCase();
