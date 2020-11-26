@@ -710,7 +710,7 @@ body {
 							<ul class="meta list list-unstyled">
 								<li class="name"><%=msg[2]%><br> <label
 									class="label label-info"><%=temp%></label></li>
-								<li class="email"><a href="#"><%=msg[4] + "." + msg[5]%></a></li>
+								<li class="email"><a href="mailto:<%=msg[4] + "." + msg[5]%>"><%=msg[4] + "." + msg[5]%></a></li>
 								<%
 									String logtime = msg[9].replace(" ", "-");
 								%>
@@ -823,14 +823,16 @@ body {
 							</fieldset>
 							<hr>
 							<div class="form-group">
-								<div id="subButtonPos"
+								<div id="subButtonPos" style=""
 									class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-									<input class="btn btn-primary" type="submit"
+									<input style="margin-left:250px;" class="btn btn-primary" type="submit"
 										value="Update Profile">
 								</div>
 							</div>
-
 						</form>
+						<button style="float: left;" class="btn btn-primary" onclick="document.location='changepassword.jsp'">Change Password</button>
+						<button style="float: right;" class="btn btn-primary" onclick="document.location='index.jsp'">&nbsp;&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;&nbsp;</button>
+						
 					</div>
 				</div>
 			</section>
