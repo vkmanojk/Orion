@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<collegeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./listofcolleges.xsd">
+    <collegeWise>
+        <collegeDetails>
+            <cid>Amrita</cid>
+            <imgUrl>./images/amritaloc.jpg</imgUrl>
+            <name>Amrita Vishwa Vidhyapeetham</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>VIT</cid>
+            <imgUrl>./images/vitloc.jpg</imgUrl>
+            <name>Vellore Institute Of Technology</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>PSG</cid>
+            <imgUrl>./images/psgloc.jpg</imgUrl>
+            <name>PSG College Of Engineering</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>DTU</cid>
+            <imgUrl>./images/dtuloc.jpg</imgUrl>
+            <name>Delhi Technological University</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>MIT</cid>
+            <imgUrl>./images/mitloc.jpg</imgUrl>
+            <name>Manipal Institute Of Technology</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>SRM</cid>
+            <imgUrl>./images/srmloc.jpg</imgUrl>
+            <name>SRM Institute of Technology</name>
+            <desc>A place for learning and innovation</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>MITC</cid>
+            <imgUrl>./images/mitcloc.jpeg</imgUrl>
+            <name>Madras Institute Of Technology</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+
+        <collegeDetails>
+            <cid>BITS</cid>
+            <imgUrl>./images/bitsloc.jpg</imgUrl>
+            <name>Birla Institute Of Technology</name>
+            <desc>Home Away From Home</desc>
+        </collegeDetails>
+    </collegeWise>
+</collegeList>
