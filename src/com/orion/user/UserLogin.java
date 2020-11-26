@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 public class UserLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDbUtil userDbUtil;
-
+	static int count = 0;
 	@Resource(name = "jdbc/Orion")
 	DataSource dataSource;
 
@@ -35,10 +35,13 @@ public class UserLogin extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
 		String sessName = userDbUtil.login(email, password);
-		
+		count++;
+		System.out.println("GET");
+		System.out.println(count);
 		if (sessName == null) {
+			System.out.println("Session failed");
 			request.setAttribute("loginMsg", "Wrong username or password");
-			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
 		} else {
 			System.out.println("Session");
@@ -46,7 +49,7 @@ public class UserLogin extends HttpServlet {
 			request.setAttribute("loginMsg", "Successfully logged in !");
 			request.setAttribute("sessionName", sessName);
 			request.getSession(false).setAttribute("sess", sessName);
-			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}
 
@@ -58,11 +61,16 @@ public class UserLogin extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
 		String sessName = userDbUtil.login(email, password);
+		count++;
+		System.out.println("GET");
+		System.out.println(count);
 		if (sessName == null) {
 			request.setAttribute("loginMsg", "Wrong username or password");
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);
 		} else {
+			count++;
+			System.out.println("Post session");
 			System.out.println(sessName);
 			request.setAttribute("loginMsg", "Successfully logged in !");
 			request.setAttribute("sessionName", sessName);

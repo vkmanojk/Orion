@@ -1,7 +1,6 @@
 package com.orion.user;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -130,7 +129,29 @@ public class UserDbUtil {
 
 	public boolean updateProfile(String title, String name, String course, String email, String phone,
 			boolean isPhone) {
-		return false;
+		Connection myConn = null;
+		Statement myStmt = null;
+		ResultSet myRs = null;
+		System.out.println("Registering");
+		try {
+			myConn = dataSource.getConnection();
+			myStmt = myConn.createStatement();
+			String sql = "UPDATE user SET title='"+title+"',"
+					+ "name='"+name+"',"
+					+ "phone='"+phone+"',"
+					+ "email='"+email+"',"
+					+ "course='"+course+"',"
+					+ "isPhone='"+isPhone+"',"
+					+ "logtime='CURRENT_TIMESTAMP'"
+					+ "WHERE email = '" + email + "'";
+			myStmt.executeUpdate(sql);
+			System.out.println("User Updated");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(myConn, myStmt, myRs);
+		}
+		return true;
 	}
 
 	public List<User> getUser() {

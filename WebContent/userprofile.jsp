@@ -654,6 +654,7 @@ body {
 	//boolean flag = true;
 	String sessVar = (String) request.getParameter("sess");
 	sessVar = sessVar.replace("-", " ");
+	request.getSession().setAttribute("sess",sessVar);
 	String[] msg = sessVar.split("\\.");
 	String temp;
 	if (msg[8] == "0") {
@@ -710,7 +711,8 @@ body {
 							<ul class="meta list list-unstyled">
 								<li class="name"><%=msg[2]%><br> <label
 									class="label label-info"><%=temp%></label></li>
-								<li class="email"><a href="mailto:<%=msg[4] + "." + msg[5]%>"><%=msg[4] + "." + msg[5]%></a></li>
+								<li class="email"><a
+									href="mailto:<%=msg[4] + "." + msg[5]%>"><%=msg[4] + "." + msg[5]%></a></li>
 								<%
 									String logtime = msg[9].replace(" ", "-");
 								%>
@@ -793,10 +795,10 @@ body {
 								<div class="form-group">
 									<label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
 									<div class="col-md-10 col-sm-9 col-xs-12">
-
-										<input type="email" class="form-control"
+										<label class="col-md-2  col-sm-3 col-xs-12 control-label"><%=msg[4] + "." + msg[5]%></label>
+										<!-- <input type="email" class="form-control"
 											value=<%=msg[4] + "." + msg[5]%> name="email" required>
-										<p class="help-block">Format: abc@gmail.com</p>
+										<p class="help-block">Format: abc@gmail.com</p>  -->
 
 									</div>
 								</div>
@@ -825,19 +827,30 @@ body {
 							<div class="form-group">
 								<div id="subButtonPos" style=""
 									class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-									<input style="margin-left:250px;" class="btn btn-primary" type="submit"
-										value="Update Profile">
+									<input style="margin-left: 250px;" class="btn btn-primary"
+										type="submit" value="Update Profile">
 								</div>
 							</div>
 						</form>
-						<button style="float: left;" class="btn btn-primary" onclick="document.location='changepassword.jsp'">Change Password</button>
-						<button style="float: right;" class="btn btn-primary" onclick="document.location='index.jsp'">&nbsp;&nbsp;&nbsp;&nbsp;Log Out&nbsp;&nbsp;&nbsp;&nbsp;</button>
-						
+						<button style="float: left;" class="btn btn-primary"
+							onclick="document.location='changepassword.jsp'">Change
+							Password</button>
+						<button style="float: right;" class="btn btn-primary"
+							onclick="document.location='index.jsp'">&nbsp;&nbsp;&nbsp;&nbsp;Log
+							Out&nbsp;&nbsp;&nbsp;&nbsp;</button>
+
 					</div>
 				</div>
 			</section>
 		</div>
 	</div>
+	<script>
+		
+	<%if (request.getAttribute("changeProfile") != null) {%>
+		alert('	<%=request.getAttribute("changeProfile")%>	');
+	<%}%>
+		
+	</script>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script
 		src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

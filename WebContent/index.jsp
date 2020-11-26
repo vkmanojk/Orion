@@ -28,8 +28,6 @@
 <body>
 	<%
 	String msg = (String) request.getAttribute("sessionName");
-	System.out.println("Index");
-	System.out.println(msg);
 		if (msg != null) {
 			String[] sessName = msg.split(".");
 	%>
