@@ -134,6 +134,7 @@ public class UserDbUtil {
 		ResultSet myRs = null;
 		System.out.println("Registering");
 		try {
+			int temp = isPhone == false ? 1: 0;
 			myConn = dataSource.getConnection();
 			myStmt = myConn.createStatement();
 			String sql = "UPDATE user SET title='"+title+"',"
@@ -141,17 +142,18 @@ public class UserDbUtil {
 					+ "phone='"+phone+"',"
 					+ "email='"+email+"',"
 					+ "course='"+course+"',"
-					+ "isPhone='"+isPhone+"',"
-					+ "logtime='CURRENT_TIMESTAMP'"
+					+ "isPhone='"+temp+"',"
+					+ "logtime=NOW()"
 					+ "WHERE email = '" + email + "'";
 			myStmt.executeUpdate(sql);
-			System.out.println("User Updated");
+			System.out.println(email);
+			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		} finally {
 			close(myConn, myStmt, myRs);
 		}
-		return true;
 	}
 
 	public List<User> getUser() {

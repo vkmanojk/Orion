@@ -43,20 +43,33 @@ public class UserProfile extends HttpServlet {
 		title = request.getParameter("title");
 		name = request.getParameter("name");
 		phone = request.getParameter("number");
-		email = request.getParameter("email");
+
 		course = request.getParameter("course");
 		isPhone = request.getParameter("isphone") == "1";
 		String sessName = (String) request.getSession().getAttribute("sess");
-		System.out.println(sessName);
-		if (userDbUtil.updateProfile(title, name, course, email, phone, isPhone)) {
-			request.setAttribute("changeProfile", "Profile Updated");
-			request.setAttribute("loginMsg", "Successfully logged in !");
-			request.setAttribute("sessionName", sessName);
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-			rd.forward(request, response);
+
+		if (sessName != null) {
+			String[] msg = sessName.split("\\.");
+			email = msg[4] + "." + msg[5];
+			boolean flag = userDbUtil.updateProfile(title, name, course, email, phone, isPhone);
+			System.out.println(flag);
+			if (flag) {
+				request.setAttribute("changeProfile", "Profile Updated");
+				request.setAttribute("loginMsg", "Successfully logged in !");
+				request.setAttribute("sessionName", sessName);
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				rd.forward(request, response);
+			} else {
+				System.out.println("Error changing");
+				request.setAttribute("changeProfile", "Error Occured! Try later !!");
+				request.setAttribute("loginMsg", "Successfully logged in !");
+				request.setAttribute("sessionName", sessName);
+				RequestDispatcher rd = request.getRequestDispatcher("userprofile.jsp?sess="+sessName.replace(" ", "-"));
+				rd.forward(request, response);
+			}
 		}
 		else {
-			request.setAttribute("changeProfile", "Error Occured! Try later !!");
+			request.setAttribute("changeProfile", "Try later !!");
 			RequestDispatcher rd = request.getRequestDispatcher("userprofile.jsp");
 			rd.forward(request, response);
 		}

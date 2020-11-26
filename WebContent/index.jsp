@@ -58,6 +58,7 @@
 								class="btn btn-primary" href=<%="userprofile.jsp?sess="+msg.replace(" ", "-")%> >Profile</a>
 
 						</div>
+						
 					</div>
 				</nav>
 			</div>
