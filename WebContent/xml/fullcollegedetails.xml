@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<collegeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./fullcollegedetails.xsd">
+    <collegeWise collegeName="Amrita">
+        <homeDetails>
+            <logoUrl>../images/sliders/amrita/logo.png</logoUrl>
+            <sliderUrl1>../images/sliders/amrita/a.jpg</sliderUrl1>
+            <sliderUrl2>../images/sliders/amrita/b.jpg</sliderUrl2>
+            <sliderUrl3>../images/sliders/amrita/c.jpg</sliderUrl3>
+            <about>The beginnings of Amrita Vishwa Vidyapeetham can be traced to 1994 when a School of Engineering was started in an obscure village named Ettimadai, at the foothills of Bouluvanpatty ranges of the Western Ghats in the Coimbatore district of Tamil Nadu. When Amrita became a “deemed to be University” in January 2003, it was the youngest group of institutions to be conferred this status. As Amrita's first campus, Coimbatore is home to the administrative headquarters of Amrita Vishwa Vidyapeetham. Schools of Engineering and Business, in addition to Departments of Social Work and Communication, are located on this campus. Research centers include AMBE, CEN, CES and Cybersecurity. The campus has nearly 3500 students and about 600 faculty and staff members. This sprawling 400-acre campus is often likened to an oasis in a desert. Massive tree-planting and forestation activities undertaken over the past decade have converted the once-barren land into a lush green and beautiful place. A lot of emphasis is placed on eco-friendly and conservation practices. Waste water from the hostels and faculty and staff quarters is treated using EM; no chemicals are used in the process. Organic fertilizers are made using vermi-compost, pesticides have been avoided since the very beginning. The tranquil surroundings, away from the pollution and the bustle of city life, are home to several exotic birds, including parrots and peacocks.</about>
+            <research>Amrita Vishwa Vidyapeetham is a world class, research intensive institution with national and international reputation as an educational institution providing higher education in an ambience rooted in rich Indian culture and heritage. Based in the Coimbatore campus, the research centers are envisioned as a platform to encourage and enhance research among the faculty of Amrita Schools of Business, Communication, Engineering and Social Work.</research>
+            <campuslife>"My life at Amrita has etched such subtle memories that it has been difficult realize the impact during my actual process as a student during a four year course. I know, however, that years later I will reflect and cherish the opportunities I gained. At one of the most crucial and formative stages of my life, I consider myself most fortunate to be exposed to such a richly, multifaceted and educative influence. I know that I am evolving in a way that determines my future positively; our campus offers a diverse, dynamic platform for personality development. The ambience on Amrita's campus needs no description for those who have experienced it. Placed in a serene setting right in the lap of nature, we are provided with an environment that in so many ways is so conducive for growth. As it is secluded from all sources of pollution, its pristine atmosphere soothes the mind, facilitates good health and whets one's appetite for learning."</campuslife>
+        </homeDetails>
+
+        <courseDetails>
+            <logoUrl>../images/sliders/amrita/logo.png</logoUrl>
+            <book1 url='../images/sliders/amrita/books/book1.jpg'>Introduction to information Technology</book1>
+            <book2 url='../images/sliders/amrita/books/book2.jpg'>Basic Introduction to HTML, CSS and Javascript</book2>
+            <book3 url='../images/sliders/amrita/books/book3.jpg'>Database Management System</book3>
+            <book4 url='../images/sliders/amrita/books/book4.jpg'>Mathematics for Computer Science</book4>
+            <book5 url='../images/sliders/amrita/books/book1.jpg'>Introduction to information Technology</book5>
+            <book6 url='../images/sliders/amrita/books/book2.jpg'>Basic Introduction to HTML, CSS and Javascript</book6>
+            <book7 url='../images/sliders/amrita/books/book3.jpg'>Database Management System</book7>
+            <book8 url='../images/sliders/amrita/books/book4.jpg'>Mathematics for Computer Science</book8>
+        </courseDetails>
+
+        <contactDetails>
+            <logoUrl>../images/sliders/amrita/logo.png</logoUrl>
+            <address>Amritanagar Coimbatore - 641 112 Tamil Nadu, India</address>
+            <phone>+91-422-2685000</phone>
+            <fax>+91-422-2686274</fax>
+            <email>univhq@amrita.edu</email>
+            <map>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.801510459604!2d76.89843921428792!3d10.902684359832966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85c95d3e828eb%3A0x2785cb4510629029!2sAmrita%20Vishwa%20Vidyapeetham%20University!5e0!3m2!1sen!2sin!4v1600349708925!5m2!1sen!2sin</map>
+            <fullname>Amrita Vishwa Vidyapeetham CBE</fullname>
+        </contactDetails>
+
+    </collegeWise>
+    
+    <collegeWise collegeName="VIT">
+        <homeDetails>
+            <logoUrl>../images/sliders/amrita/logo.png</logoUrl>
+            <sliderUrl1>../images/sliders/amrita/a.jpg</sliderUrl1>
+            <sliderUrl2>../images/sliders/amrita/b.jpg</sliderUrl2>
+            <sliderUrl3>../images/sliders/amrita/c.jpg</sliderUrl3>
+            <about>The beginnings of VIT can be traced to 1994 when a School of Engineering was started in an obscure village named Ettimadai, at the foothills of Bouluvanpatty ranges of the Western Ghats in the Coimbatore district of Tamil Nadu. When Amrita became a “deemed to be University” in January 2003, it was the youngest group of institutions to be conferred this status. As Amrita's first campus, Coimbatore is home to the administrative headquarters of Amrita Vishwa Vidyapeetham. Schools of Engineering and Business, in addition to Departments of Social Work and Communication, are located on this campus. Research centers include AMBE, CEN, CES and Cybersecurity. The campus has nearly 3500 students and about 600 faculty and staff members. This sprawling 400-acre campus is often likened to an oasis in a desert. Massive tree-planting and forestation activities undertaken over the past decade have converted the once-barren land into a lush green and beautiful place. A lot of emphasis is placed on eco-friendly and conservation practices. Waste water from the hostels and faculty and staff quarters is treated using EM; no chemicals are used in the process. Organic fertilizers are made using vermi-compost, pesticides have been avoided since the very beginning. The tranquil surroundings, away from the pollution and the bustle of city life, are home to several exotic birds, including parrots and peacocks.</about>
+            <research>Amrita Vishwa Vidyapeetham is a world class, research intensive institution with national and international reputation as an educational institution providing higher education in an ambience rooted in rich Indian culture and heritage. Based in the Coimbatore campus, the research centers are envisioned as a platform to encourage and enhance research among the faculty of Amrita Schools of Business, Communication, Engineering and Social Work.</research>
+            <campuslife>"My life at Amrita has etched such subtle memories that it has been difficult realize the impact during my actual process as a student during a four year course. I know, however, that years later I will reflect and cherish the opportunities I gained. At one of the most crucial and formative stages of my life, I consider myself most fortunate to be exposed to such a richly, multifaceted and educative influence. I know that I am evolving in a way that determines my future positively; our campus offers a diverse, dynamic platform for personality development. The ambience on Amrita's campus needs no description for those who have experienced it. Placed in a serene setting right in the lap of nature, we are provided with an environment that in so many ways is so conducive for growth. As it is secluded from all sources of pollution, its pristine atmosphere soothes the mind, facilitates good health and whets one's appetite for learning."</campuslife>
+        </homeDetails>
+
+        <courseDetails>
+            <logoUrl>../images/sliders/amrita/logo.png</logoUrl>
+            <book1 url='../images/sliders/amrita/books/book1.jpg'>Introduction to information Technology</book1>
+            <book2 url='../images/sliders/amrita/books/book2.jpg'>Basic Introduction to HTML, CSS and Javascript</book2>
+            <book3 url='../images/sliders/amrita/books/book3.jpg'>Database Management System</book3>
+            <book4 url='../images/sliders/amrita/books/book4.jpg'>Mathematics for Computer Science</book4>
+            <book5 url='../images/sliders/amrita/books/book1.jpg'>Introduction to information Technology</book5>
+            <book6 url='../images/sliders/amrita/books/book2.jpg'>Basic Introduction to HTML, CSS and Javascript</book6>
+            <book7 url='../images/sliders/amrita/books/book3.jpg'>Database Management System</book7>
+            <book8 url='../images/sliders/amrita/books/book4.jpg'>Mathematics for Computer Science</book8>
+        </courseDetails>
+
+        <contactDetails>
+            <logoUrl>../images/sliders/amrita/logo.png</logoUrl>
+            <address>Amritanagar Coimbatore - 641 112 Tamil Nadu, India</address>
+            <phone>+91-422-2685000</phone>
+            <fax>+91-422-2686274</fax>
+            <email>univhq@amrita.edu</email>
+            <map>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.801510459604!2d76.89843921428792!3d10.902684359832966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85c95d3e828eb%3A0x2785cb4510629029!2sAmrita%20Vishwa%20Vidyapeetham%20University!5e0!3m2!1sen!2sin!4v1600349708925!5m2!1sen!2sin</map>
+            <fullname>Vellore Institute of Engineering</fullname>
+        </contactDetails>
+
+    </collegeWise>
+</collegeList>
