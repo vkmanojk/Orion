@@ -1,0 +1,16 @@
+body, html {
+	height: 100%;
+	width: 100%;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	scroll-behavior: smooth;
+	background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+#myUL {
+	/* Remove default list styling */
+	list-style-type: none;
+}

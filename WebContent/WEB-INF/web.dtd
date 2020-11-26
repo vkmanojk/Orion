@@ -1,0 +1,33 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT ns1:web-app (ns1:display-name,ns1:welcome-file-list,
+                       ns1:context-param+)>
+<!ATTLIST ns1:web-app
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'
+  xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance'
+  version CDATA #REQUIRED
+  xsi:schemaLocation CDATA #REQUIRED>
+
+<!ELEMENT ns1:display-name (#PCDATA)>
+<!ATTLIST ns1:display-name
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'>
+
+<!ELEMENT ns1:welcome-file-list (ns1:welcome-file)+>
+<!ATTLIST ns1:welcome-file-list
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'>
+
+<!ELEMENT ns1:context-param (ns1:param-name,ns1:param-value)>
+<!ATTLIST ns1:context-param
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'>
+
+<!ELEMENT ns1:welcome-file (#PCDATA)>
+<!ATTLIST ns1:welcome-file
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'>
+
+<!ELEMENT ns1:param-name (#PCDATA)>
+<!ATTLIST ns1:param-name
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'>
+
+<!ELEMENT ns1:param-value (#PCDATA)>
+<!ATTLIST ns1:param-value
+  xmlns:ns1 CDATA #FIXED 'http://xmlns.jcp.org/xml/ns/javaee'>
