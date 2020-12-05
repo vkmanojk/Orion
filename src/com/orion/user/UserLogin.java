@@ -35,21 +35,24 @@ public class UserLogin extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
 		String sessName = userDbUtil.login(email, password);
-		count++;
+		
 		System.out.println("GET");
 		System.out.println(count);
-		if (sessName == null) {
-			System.out.println("Session failed");
+		if (count==0) {
+			count++;
+			request.setAttribute("loginMsg", null);
+			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+			rd.forward(request, response);
+		} else if (sessName == null) {
 			request.setAttribute("loginMsg", "Wrong username or password");
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);
 		} else {
-			System.out.println("Session");
+			System.out.println("Post session");
 			System.out.println(sessName);
 			request.setAttribute("loginMsg", "Successfully logged in !");
 			request.setAttribute("sessionName", sessName);
-			request.getSession(false).setAttribute("sess", sessName);
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 			rd.forward(request, response);
 		}
 
@@ -61,10 +64,15 @@ public class UserLogin extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
 		String sessName = userDbUtil.login(email, password);
-		count++;
+		
 		System.out.println("GET");
 		System.out.println(count);
-		if (sessName == null) {
+		if (count==0) {
+			request.setAttribute("loginMsg", null);
+			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+			rd.forward(request, response);
+		} else if (sessName == null) {
+			count++;
 			request.setAttribute("loginMsg", "Wrong username or password");
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);

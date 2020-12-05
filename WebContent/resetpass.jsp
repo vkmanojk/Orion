@@ -356,11 +356,17 @@ a:hover {
 						document.write(new Date().getFullYear());
 					</script>
 					All rights reserved | This is made with ❤️ by <a
-						href="https://vkmanojk.github.io/NetCentricProgramming/Orion%20Inc/"
+						href="#"
 						style="color: white;">Orion</a>
 				</p>
 			</div>
 		</div>
 	</footer>
+	<% 
+	if(request.getAttribute("resetmsg")!=null) { %>
+		<script>
+			alert('<%=request.getAttribute("resetmsg")%>');
+		</script>
+	<%} %>
 </body>
 </html>

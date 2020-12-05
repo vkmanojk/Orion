@@ -339,7 +339,7 @@ a:hover {
 
 <%
 	String msg = (String) request.getAttribute("changeError");
-	System.out.println("Hello");
+	System.out.println(msg);
 %>
 <body>
 	<div class="elelment">
@@ -399,7 +399,7 @@ a:hover {
 </body>
 <script type="text/javascript">
 <%if (msg != null) {%>
-	alert(<%=msg%>);
+	alert('<%=msg%>');
 <%}%>
 	
 </script>

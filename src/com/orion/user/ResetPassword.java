@@ -72,7 +72,7 @@ public class ResetPassword extends HttpServlet {
 			} catch (Exception ex) {
 				System.out.println("Unable to reset");
 				ex.printStackTrace();
-				message = "There was an error: " + ex.getMessage();
+				message = "There was an error! Try again later !!";
 			} finally {
 				System.out.println(message);
 				request.setAttribute("resetmsg", message);

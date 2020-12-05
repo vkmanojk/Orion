@@ -1,4 +1,4 @@
-package com.orion.ZuZu.CollegePages;
+package com.orion.colleges;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CollegeCoursePage
+ * Servlet implementation class CollegeContactPage
  */
-@WebServlet("/college_details_course/*")
-public class CollegeCoursePage extends HttpServlet {
+@WebServlet("/college_details_contact/*")
+public class CollegeContactPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CollegeCoursePage() {
+    public CollegeContactPage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,11 +29,9 @@ public class CollegeCoursePage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		RequestDispatcher rd = request.getRequestDispatcher("/college_details_course.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/college_details_contact.jsp");
 		
 		rd.forward(request, response);
-		
 	}
 
 	/**

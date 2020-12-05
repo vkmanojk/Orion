@@ -131,7 +131,11 @@ body {
 		</div>
 
 	</div>
-
+	<%if(request.getAttribute("loginMsg")!=null) { %>
+		<script>
+			alert('<%=request.getAttribute("loginMsg")%>');
+		</script>
+	<%} %>
 	<script src="js/jquery/jquery-3.2.1.min.js"></script>
 	<script src="js/bootstrap/js/popper.js"></script>
 	<script src="js/bootstrap/js/bootstrap.min.js"></script>

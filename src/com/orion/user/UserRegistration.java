@@ -1,7 +1,6 @@
 package com.orion.user;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.regex.Pattern;
 
 import javax.annotation.Resource;
@@ -17,7 +16,7 @@ import javax.sql.DataSource;
 public class UserRegistration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserDbUtil userDbUtil;
-
+	static int count = 0;
 	@Resource(name = "jdbc/Orion")
 	DataSource dataSource;
 
@@ -33,10 +32,6 @@ public class UserRegistration extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-	
 		String title, name, phone, email, password, course;
 		String type;
 		boolean isPhone;
@@ -49,14 +44,20 @@ public class UserRegistration extends HttpServlet {
 		type = request.getParameter("member_level");
 		isPhone = request.getParameter("confirm_type") == "by_phone";
 		boolean isAgree = request.getParameter("agree-term") != null;
-
+		System.out.println(count);
+		if(count != 0) {
 		if (isAgree) {
 			signup(title, name, phone, email, password, course, type, isPhone, response, request);
 		} else {
-			out.println("<script type=\"text/javascript\">");
-			out.println("alert('Please agree to the terms & conditions');");
-			out.println("</script>");
-			response.sendRedirect("signup.jsp");
+			request.setAttribute("signupMsg", "Please agree to the terms and conditions");
+			RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
+			rd.forward(request, response);
+		}
+		} else {
+			count++;
+			request.setAttribute("signupMsg", null);
+			RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
+			rd.forward(request, response);
 		}
 	}
 
@@ -91,23 +92,23 @@ public class UserRegistration extends HttpServlet {
 					System.out.println("valid password");
 					if (!(userDbUtil.register(newUser))) {
 						request.setAttribute("signupMsg", "Error! Please try later !!");
-						RequestDispatcher rd = request.getRequestDispatcher("/signup.jsp");
+						RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
 						rd.forward(request, response);
 					} else {
 						request.setAttribute("signupMsg", "Account Created !!");
-						RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+						RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 						rd.forward(request, response);
 					}
 				} else {
-					String sMsg = "Your password must have:\n" + "1. At least 8 characters and at most 20 characters.\n2. At least one digit.\n3. At least one upper case alphabet.\n4. At least one lower case alphabet.\n5. At least one special character which includes @#$%\n6. It should not contain any white space.";
+					String sMsg = "Your password must have:1)At least 8 characters and at most 20 characters.2) At least one digit.3) At least one upper case alphabet.4) At least one lower case alphabet.5) At least one special character which includes @#$%6) It should not contain any white space.";
 					request.setAttribute("signupMsg", sMsg);
-					RequestDispatcher rd = request.getRequestDispatcher("/signup.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
 					rd.forward(request, response);
 				}
 
 			} else {
 				request.setAttribute("signupMsg", "Enter valid email id !!");
-				RequestDispatcher rd = request.getRequestDispatcher("/signup.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("signup.jsp");
 				rd.forward(request, response);
 			}
 

@@ -84,6 +84,7 @@ public class UserDbUtil {
 				close(myConn, myStmt, myRs);
 				return true;
 			}
+			System.out.println("Unable to change password");
 			close(myConn, myStmt, myRs);
 			return false;
 		} catch (Exception e) {

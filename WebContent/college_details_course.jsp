@@ -19,9 +19,9 @@
 	</content>
 	<nav>
 		<ul>
-			<li id='liindex'><a href="college_details_index.html">Home</a></li>
-			<li id='licourse'><a href="college_details_course.html">Courses</a></li>
-			<li id='licontact'><a href="college_details_contact.html">Contact</a></li>	
+			<li id='liindex'><a href="college_details_index.jsp">Home</a></li>
+			<li id='licourse'><a href="college_details_course.jsp">Courses</a></li>
+			<li id='licontact'><a href="college_details_contact.jsp">Contact</a></li>	
 		</ul> 
 	</nav>
 <h1>Semester 1/2</h1>

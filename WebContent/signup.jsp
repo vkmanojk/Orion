@@ -402,19 +402,13 @@ body {
 			</div>
 		</div>
 	</footer>
-	<%
-		String msg = (String) request.getAttribute("signupMsg");
-	%>
-	<script type="text/javascript">
-		
-	<%System.out.println(msg);
-			if (msg != null) {%>
-		alert(
-	<%=msg%>
-		);
-	<%}%>
-		
-	</script>
+	
+	<% 
+	if(request.getAttribute("signupMsg")!=null) { %>
+		<script>
+			alert('<%=request.getAttribute("signupMsg")%>');
+		</script>
+	<%} %>
 	<script src="js/signup/vendor/jquery/jquery.min.js"></script>
 	<script src="js/signup/js/main.js"></script>
 </body>

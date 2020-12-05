@@ -137,7 +137,7 @@ body,html{
         <div class="header">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="/Orion-Inc/index.jsp">Logout</a>
+                    <li role="presentation" class="active"><a href="index.jsp">Logout</a>
                     </li>
                 </ul>
             </nav>
@@ -178,7 +178,7 @@ body,html{
       </div>
     </div> -->
 </div>
-
+</div>
 <script src="./js/listofcollegesapp.js"></script>
 </body>
 

@@ -68,7 +68,7 @@
 							<a class="nav-item nav-link px-3" href="exams.jsp">Competitive
 								Exams</a> <a class="nav-item nav-link px-3" href="colleges.jsp">Colleges
 								and Universities</a> <a class="nav-item nav-link px-3"
-								href="scholarships.jsp">Scholarships</a> <a
+								href="scholarship.jsp">Scholarships</a> <a
 								class="btn btn-primary" href=<%="userprofile.jsp?sess="+msg.replace(" ", "-")%> >Profile</a>
 
 						</div>
@@ -117,7 +117,7 @@
 				%>
 				<a class="btn btn-outline-dark btn-lg" href="exams.jsp">&nbsp;&nbsp;&nbsp;Exams&nbsp;&nbsp;&nbsp;</a>
 				<a class="btn btn-outline-dark btn-lg" href="colleges.jsp">&nbsp;&nbsp;Colleges&nbsp;&nbsp;</a>
-				<a class="btn btn-outline-dark btn-lg" href="scholarships.jsp">Scholarships</a>
+				<a class="btn btn-outline-dark btn-lg" href="scholarship.jsp">Scholarships</a>
 				<%
 					}
 				%>

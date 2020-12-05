@@ -38,7 +38,7 @@
     <body>
     	<%
 			Class.forName("com.mysql.jdbc.Driver");  
-			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/competitiveExams","root","");
+			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Orion","root","manojkumar");
 			Statement stmt = null;
 			ResultSet rs = null;
 		

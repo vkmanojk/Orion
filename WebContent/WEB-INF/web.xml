@@ -16,24 +16,24 @@
 
 	<context-param>
 		<param-name>host</param-name>
-		<param-value>-smtp provider-</param-value>
+		<param-value>smtp.gmail.com</param-value>
 	</context-param>
 
 	<context-param>
 		<param-name>port</param-name>
-		<param-value>-port number-</param-value>
+		<param-value>587</param-value>
 	</context-param>
 
 	<context-param>
 		<param-name>email</param-name>
-		<param-value>your-email</param-value>
+		<param-value>vkmanojk@gmail.com</param-value>
 	</context-param>
 	<context-param>
 		<param-name>name</param-name>
-		<param-value>-name-</param-value>
+		<param-value>Manojkumar V K</param-value>
 	</context-param>
 	<context-param>
 		<param-name>pass</param-name>
-		<param-value>-your password-</param-value>
+		<param-value>lkuehvslazcfubct</param-value>
 	</context-param>
 </web-app>
