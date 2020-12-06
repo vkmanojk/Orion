@@ -79,7 +79,7 @@
             <div class="container my-5">
                 <hr class="bg-light">
             </div>
-            <div id="myUL" class="row px-5 my-5">
+            <div id="myExams" class="row px-5 my-5">
             	<% 
             		rs = stmt.executeQuery(sql);
             		while (rs.next()) {
@@ -110,11 +110,11 @@
                 <hr class="bg-light">
             </div>
             <div class="container">
-                <a href="#QuickGlanceTable" class="container h3 btn font-weight-bold btn-dark text-light py-3" onclick="showQuickGlance()">Quick Glance</a>
+                <a href="#QuickGlanceTable" class="container h3 btn font-weight-bold btn-dark text-light py-3" onclick="toggleQuickGlance()">Quick Glance</a>
             </div>
             <div id="QuickGlanceTable" class="container my-5" style="display:none;">
                 <table class="table table-dark table-striped table-hover shadow-lg">
-                    <tbody>
+                    <thead>
                         <tr style="height: 29px;">
                             <th style="height: 29px; width: 125px;" valign="top">
                                 <p>
@@ -133,133 +133,31 @@
                                 </p>
                             </th>
                         </tr>
-                        <tr style="height: 40px;">
+                    </thead>
+                    <tbody>
+                    	<% 
+                    		stmt = conn.createStatement();
+            				sql = "select * from ExamsQuickReference";
+            				rs = stmt.executeQuery(sql);
+            				int refCount = 0;
+            				while (rs.next()) {
+            					refCount++;
+            				}
+            				rs = stmt.executeQuery(sql);
+            				while (rs.next()) {
+            			%>
+                        <tr">
                             <td style="height: 40px; width: 125px;" valign="top">
-                                <p>1</p>
+                                <p><%out.println(rs.getString("RefID"));%></p>
                             </td>
                             <td style="height: 40px; width: 417px;" valign="top">
-                                <p>JEE Main</p>
+                                <p><%out.println(rs.getString("ExamName"));%></p>
                             </td>
                             <td style="height: 40px; width: 563px;" valign="top">
-                                <p>January Session: 6-Jan-2020 to 11-Jan-2020 (results are out for this session)</p>
-                                <p>April Session:
-                                    <span>
-                                        <strong>1- Sep-2020 to 6-Sep-2020</strong>
-                                    </span>
-                                    (exam was postponed due to COVID-19)</p>
+                                <p><%out.println(rs.getString("Description"));%></p>
                             </td>
                         </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>2</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>JEE Advanced</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <p>
-                                    <span>
-                                        <strong>27-Sep-2020</strong>
-                                    </span>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>3</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>BITSAT</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <p>
-                                    <strong>Postpone
-                                    </strong>(Dates to be out soon)</p>
-                            </td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>4</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>VITEEE</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <p>
-                                    <strong>Cancelled</strong>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>5</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>SRMJEEE</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <p>
-                                    <strong>Cancelled</strong>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>6</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>COMEDK</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <p>
-                                    <strong>19-Aug-2020</strong>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>7</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>KIITEE</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <strong>24-Jul-2020 to 28-Jul-2020
-                                </strong>(Result announced)</td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>8</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>WBJEE</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <strong>Postpone
-                                </strong>(Dates to be out soon)</td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>9</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>MHTCET</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <strong>Postpone
-                                </strong>(Dates to be out soon)</td>
-                        </tr>
-                        <tr style="height: 29px;">
-                            <td style="height: 29px; width: 125px;" valign="top">
-                                <p>10</p>
-                            </td>
-                            <td style="height: 29px; width: 417px;" valign="top">
-                                <p>BCECE</p>
-                            </td>
-                            <td style="height: 29px; width: 563px;" valign="top">
-                                <p>Scrapped</p>
-                            </td>
-                        </tr>
+                        <%}%>
                     </tbody>
                 </table>
             </div>
