@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Context (Resource)>
+<!ATTLIST Context
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT Resource EMPTY>
+<!ATTLIST Resource
+  xmlns CDATA #FIXED ''
+  auth NMTOKEN #REQUIRED
+  driverClassName NMTOKEN #REQUIRED
+  maxActive CDATA #REQUIRED
+  maxIdle CDATA #REQUIRED
+  maxWait CDATA #REQUIRED
+  name CDATA #REQUIRED
+  password NMTOKEN #REQUIRED
+  type NMTOKEN #REQUIRED
+  url CDATA #REQUIRED
+  username NMTOKEN #REQUIRED>

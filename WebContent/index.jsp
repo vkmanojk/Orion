@@ -106,8 +106,8 @@
 					if (msg == null) {
 				%>
 
-				<a class="btn btn-outline-dark btn-lg" href="UserRegistration">Register</a>
-				<a class="btn btn-dark btn-lg" href="UserLogin">Login</a>
+				<a id="reg" class="btn btn-outline-dark btn-lg" href="UserRegistration">Register</a>
+				<a id="login" class="btn btn-dark btn-lg" href="UserLogin">Login</a>
 
 				<%
 					}

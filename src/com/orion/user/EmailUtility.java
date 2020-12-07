@@ -34,7 +34,6 @@ public class EmailUtility {
 		System.out.println("Email utility1");
 		Session session = Session.getInstance(properties, auth);
 		System.out.println("Email utility2");
-		// creates a new e-mail message
 		Message msg = new MimeMessage(session);
 		System.out.println("Email utility3");
 		msg.setFrom(new InternetAddress(senderEmail, senderName));
@@ -43,8 +42,6 @@ public class EmailUtility {
 		msg.setSubject(subject);
 		msg.setSentDate(new Date());
 		msg.setText(message);
-
-		// sends the e-mail
 		Transport.send(msg);
 
 	}

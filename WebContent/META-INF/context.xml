@@ -1,4 +1,9 @@
-<Context>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE Context SYSTEM "context.dtd">
+<Context> -->
+<Context 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="context.xsd"> 
 
 	<Resource name="jdbc/Orion" auth="Container"
 		type="javax.sql.DataSource" maxActive="20" maxIdle="5" maxWait="10000"

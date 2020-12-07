@@ -44,10 +44,12 @@ public class UserLogin extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);
 		} else if (sessName == null) {
+			count++;
 			request.setAttribute("loginMsg", "Wrong username or password");
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);
 		} else {
+			count++;
 			System.out.println("Post session");
 			System.out.println(sessName);
 			request.setAttribute("loginMsg", "Successfully logged in !");
@@ -65,9 +67,10 @@ public class UserLogin extends HttpServlet {
 		String password = request.getParameter("pass");
 		String sessName = userDbUtil.login(email, password);
 		
-		System.out.println("GET");
+		System.out.println("Post");
 		System.out.println(count);
 		if (count==0) {
+			count++;
 			request.setAttribute("loginMsg", null);
 			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
 			rd.forward(request, response);

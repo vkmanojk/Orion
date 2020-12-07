@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Context">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Resource"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Resource">
+    <xs:complexType>
+      <xs:attribute name="auth" use="required" type="xs:NCName"/>
+      <xs:attribute name="driverClassName" use="required" type="xs:NCName"/>
+      <xs:attribute name="maxActive" use="required" type="xs:integer"/>
+      <xs:attribute name="maxIdle" use="required" type="xs:integer"/>
+      <xs:attribute name="maxWait" use="required" type="xs:integer"/>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="password" use="required" type="xs:NCName"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+      <xs:attribute name="url" use="required" type="xs:anyURI"/>
+      <xs:attribute name="username" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

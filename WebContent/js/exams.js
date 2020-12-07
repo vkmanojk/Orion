@@ -3,15 +3,21 @@ function showExam(n,cur) {
 	if(document.getElementById("Exam-"+cur).style.display == "block")
 	{
 		document.getElementById("Exam-"+cur).style.display = "none";
-		return;
+		return;;
 	}
 	for(i=1; i<=n; i++) {
 		document.getElementById("Exam-"+i).style.display = "none";
 	};
 	document.getElementById("Exam-"+cur).style.display = "block";
+	
+}
+
+function temp() {
+	console.log("Temp");
 }
 
 function toggleQuickGlance() {
+	console.log("toggled");
 	if(document.getElementById("QuickGlanceTable").style.display == "block")
 	{
 		document.getElementById("QuickGlanceTable").style.display = "none";
