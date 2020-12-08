@@ -51,7 +51,7 @@
 			}
 		%>
         <nav class="d-flex navbar navbar-dark bg-dark m-3 navbar-expand-lg rounded-lg shadow fixed-top">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.jsp">
                 <span class="h3 font-weight-bold">Orion</span>
             </a>
             <span class="text-light">
