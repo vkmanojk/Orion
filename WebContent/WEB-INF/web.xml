@@ -16,7 +16,7 @@
 
 	<context-param>
 		<param-name>host</param-name>
-		<param-value>smtp.gmail.com</param-value>
+		<param-value>--url-of-smtp-provider--</param-value>
 	</context-param>
 
 	<context-param>
