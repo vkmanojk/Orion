@@ -21,19 +21,19 @@
 
 	<context-param>
 		<param-name>port</param-name>
-		<param-value>587</param-value>
+		<param-value>--port-no--</param-value>
 	</context-param>
 
 	<context-param>
 		<param-name>email</param-name>
-		<param-value>vkmanojk@gmail.com</param-value>
+		<param-value>--your-email--id--</param-value>
 	</context-param>
 	<context-param>
 		<param-name>name</param-name>
-		<param-value>Manojkumar V K</param-value>
+		<param-value>--your-name--</param-value>
 	</context-param>
 	<context-param>
 		<param-name>pass</param-name>
-		<param-value>lkuehvslazcfubct</param-value>
+		<param-value>--your-password--</param-value>
 	</context-param>
 </web-app>
